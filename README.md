@@ -2,6 +2,13 @@
 
 A real-time 3D visualization of cryptocurrency orderbook data with advanced trading insights, pressure zone analysis, and multi-venue support.
 
+## Project Demo
+<img width="1912" height="897" alt="Image" src="https://github.com/user-attachments/assets/57c70d9d-66bb-4d38-bbd3-feffd459c55d" />
+
+<img width="437" height="784" alt="Image" src="https://github.com/user-attachments/assets/76b2ac03-57af-4722-94e0-107fec89704f" />
+
+ <img width="394" height="796" alt="Image" src="https://github.com/user-attachments/assets/ad08f9f9-8a70-477f-9416-e06dd3b7722b" />
+
 ## 🚀 Features
 
 - **3D Visualization**: Interactive 3D orderbook with Price (X), Quantity (Y), and Time (Z) axes
@@ -177,8 +184,6 @@ orderbook-visualizer/
 3. **Time Zones**: All timestamps normalized to local browser time
 4. **Currency Pairs**: Focus on major USDT pairs for demonstration
 
-## Project Demo
-<img width="1340" height="597" alt="image" src="https://github.com/user-attachments/assets/bd4dad83-a26b-4dd3-819d-36931edeba53" />
 
 
 ## 🎮 Usage Guide

@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* Prevent zoom on input focus */
+  input, select, textarea {
+    font-size: 16px !important;
+    -webkit-user-select: text;
+    user-select: text;
+  }
+
+  /* Improve touch target sizes */
+  button, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Optimize scrolling */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Prevent pull-to-refresh on overscroll */
+  body {
+    overscroll-behavior: none;
+  }
+}
+
+@layer base {
+  /**
+   * Tailwind CSS theme optimized for Orderbook 3D Visualizer
+   * Dark theme with financial trading colors
+   */
+  :root {
+    /* Dark theme by default for better 3D visualization */
+    --background: 220 13% 9%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 13% 12%;
+    --card-foreground: 210 40% 95%;
+
+    --popover: 220 13% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 220 13% 9%;
+
+    --secondary: 217 32% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 32% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 220 13% 9%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 32% 22%;
+    --input: 217 32% 18%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    /* Financial color palette */
+    --bullish: 142 76% 36%;      /* Green for bids/support */
+    --bearish: 0 84% 60%;        /* Red for asks/resistance */
+    --neutral: 43 74% 66%;       /* Yellow for neutral/warning */
+    --volume: 217 91% 60%;       /* Blue for volume indicators */
+
+    /* Sidebar colors for controls */
+    --sidebar-background: 220 13% 8%;
+    --sidebar-foreground: 210 40% 95%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 220 13% 9%;
+    --sidebar-accent: 217 32% 15%;
+    --sidebar-accent-foreground: 210 40% 95%;
+    --sidebar-border: 217 32% 20%;
+    --sidebar-ring: 217 91% 60%;
+  }
+
+  .dark {
+    /* Enhanced dark theme for 3D visualization */
+    --background: 220 13% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 13% 9%;
+    --card-foreground: 210 40% 95%;
+
+    --popover: 220 13% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 65%;
+    --primary-foreground: 220 13% 6%;
+
+    --secondary: 217 32% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 32% 12%;
+    --muted-foreground: 215 20% 60%;
+
+    --accent: 217 32% 15%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 32% 18%;
+    --input: 217 32% 15%;
+    --ring: 217 91% 65%;
+
+    --sidebar-background: 220 13% 5%;
+    --sidebar-foreground: 210 40% 95%;
+    --sidebar-primary: 217 91% 65%;
+    --sidebar-primary-foreground: 220 13% 5%;
+    --sidebar-accent: 217 32% 12%;
+    --sidebar-accent-foreground: 210 40% 95%;
+    --sidebar-border: 217 32% 15%;
+    --sidebar-ring: 217 91% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Custom scrollbar for dark theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-600 rounded;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+  }
+
+  /* Smooth transitions for all interactive elements */
+  .transition-smooth {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Financial color utilities */
+  .text-bullish {
+    color: hsl(var(--bullish));
+  }
+
+  .text-bearish {
+    color: hsl(var(--bearish));
+  }
+
+  .text-neutral {
+    color: hsl(var(--neutral));
+  }
+
+  .text-volume {
+    color: hsl(var(--volume));
+  }
+
+  .bg-bullish {
+    background-color: hsl(var(--bullish));
+  }
+
+  .bg-bearish {
+    background-color: hsl(var(--bearish));
+  }
+
+  .bg-neutral {
+    background-color: hsl(var(--neutral));
+  }
+
+  .bg-volume {
+    background-color: hsl(var(--volume));
+  }
+
+  /* Glassmorphism effect for UI panels */
+  .glass {
+    backdrop-filter: blur(12px);
+    background: rgba(17, 24, 39, 0.85);
+    border: 1px solid rgba(75, 85, 99, 0.3);
+  }
+
+  /* Glow effects for active elements */
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+  }
+
+  .glow-red {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+  }
+
+  /* Pulse animation for live data indicators */
+  .pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Grid pattern for background */
+  .grid-pattern {
+    background-image: 
+      linear-gradient(rgba(75, 85, 99, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(75, 85, 99, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
